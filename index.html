@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body, html{
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        #frame{
+            display: flex;
+            height: 100%;
+        }
+        #doc, #docEdit{
+            flex: 1;
+            height: 100%;
+            overflow: auto;
+            padding: 0 5px;
+            border: 0;
+        }
+    </style>
+    <link href="./static/myDocJsx.css" rel="stylesheet">
+</head>
+<body>
+    <div id="frame">
+        <div id="doc"></div>
+        <textarea id="docEdit">
+<doc>
+    <api>{`
+* 根据字符串模糊查询key，并返回匹配的缓存数组
+* @param {string} searchText    key的模糊检索条件
+* @return {Array<string>}      返回匹配的数组
+    `}</api>
+</doc>
+        </textarea>
+    </div>
+    <script src="./static/react.js"></script>
+    <script src="./static/babel.js"></script>
+    <script src="./static/myDocJsx.js"></script>
+<script>
+
+    function renderDoc() {
+        var text = document.querySelector("#docEdit").value;
+        var script = myDocJsx.convert(text);
+        document.querySelector('#doc').innerHTML = script;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        myDocJsx.usePlugin(new myDocJsxPluginTemplate)
+
+        renderDoc()
+        document.querySelector("#docEdit").addEventListener("input", function () {
+            renderDoc()
+        })
+    })
+</script>
+</body>
+</html>
