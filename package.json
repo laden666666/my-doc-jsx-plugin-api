@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/laden666666/my-doc-jsx-plugin-pai#readme",
   "peerDependencies": {
-    "my-doc-jsx": "git+https://github.com/laden666666/my-doc-jsx.git"
+    "my-doc-jsx": "0.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
@@ -61,8 +61,5 @@
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
-  },
-  "dependencies": {
-    "my-doc-jsx": "file:../my-doc-jsx"
   }
 }
