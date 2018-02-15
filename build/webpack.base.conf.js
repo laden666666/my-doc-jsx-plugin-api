@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
     entry: {
-        'myDocJsxPluginTemplate': ['./src/index.js'],
+        'myDocJsxPluginAPI': ['./src/index.js'],
     },
     externals: {
         'my-doc-jsx': {
