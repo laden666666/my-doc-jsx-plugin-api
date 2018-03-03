@@ -1,7 +1,7 @@
 /**
  * Created by njz on 2017/3/26.
  */
-import docjsx from "my-doc-jsx"
+import {BlockNode, MarkdownRender} from "my-doc-jsx"
 
 //查找参数的正则
 const paramRegex = /@param\s+({.*})?(\s+\S+)?(\s+.*)?$/
@@ -9,18 +9,20 @@ const paramRegex = /@param\s+({.*})?(\s+\S+)?(\s+.*)?$/
 //查找返回值的正则
 const returnRegex = /@return\s+({.*})?(\s+.*)?$/
 
-class API extends docjsx.BlockTag{
-    constructor(renderTools, content, tree, parentNode){
-        super(renderTools, content, tree, parentNode)
+class API extends BlockNode<MarkdownRender>{
+    constructor(node){
+        super(node)
         this.priority = 0;
     }
 
-    render(){
+    render(render: MarkdownRender){
+        let str = render.renderInlineNodes(this.childPseudoNodes)
+
         //将注释代码以“*”分割，因为每个个“*”是一行
-        let rows = this.$renderChildren(this.$getChildrenText()).split("*").map(str=>str.trim()).filter(str=> str != '<br/>')
+        let rows: string[] = str.split("*").map(str=>str.trim()).filter(str=> str != '<br/>')
 
         //获取全部描述文本，描述文本是不以@开头的所有文本
-        let describeText = rows.filter(str=> str[0] != '@').join('\n')
+        let describeText: string = rows.filter(str=> str[0] != '@').join('\n')
 
         //参数
         let paramsText = rows.filter(str => paramRegex.test(str)).map(str=>{
@@ -57,7 +59,7 @@ ${returnText ? `
 ##### 返回值
 |参数类型|参数说明|
 |-|-|-|
-|${preturnTextaram.type || ''}|${returnText.describe || ''}|
+|${returnText.type || ''}|${returnText.describe || ''}|
 ` : ''}
 `
         return mdText

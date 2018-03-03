@@ -33,4 +33,5 @@ node_modules/
 .tmp
 *.log
 *.bat
-.history
+.history/
+coverage/

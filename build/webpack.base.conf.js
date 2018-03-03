@@ -1,6 +1,11 @@
 var path = require('path')
+var webpack = require('webpack')
 var projectRoot = path.resolve(__dirname, '../')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+var autoprefixer = require('autoprefixer')({
+    browsers: ['last 2 version', 'iOS >=8', 'IE >=9']
+})
 
 module.exports = {
     entry: {
@@ -21,30 +26,52 @@ module.exports = {
         library: '[name]'
     },
     resolve: {
-        extensions: ['', '.js'],
-        fallback: [path.join(__dirname, '../node_modules')],
+        extensions: ['.ts', '.tsx', '.js'], // note if using webpack 1 you'd also need a '' in the array as well
     },
-    resolveLoader: {
-        fallback: [path.join(__dirname, '../node_modules')]
-    },
-    postcss: [ require('autoprefixer')({
-        browsers: ['last 2 versions']
-    })],
     module: {
-        loaders: [{
+        //加载器配置
+        rules: [{
             test: /\.js$/,
-            loader: 'babel',
-            include: projectRoot,
-            exclude: /node_modules/
+            loader: 'babel-loader',
+            include: path.join(__dirname, '../src'),
         }, {
-            test: /\.json$/,
-            loader: 'json'
+            test: /\.ts(x?)$/,
+            include: path.join(__dirname, '../src'),
+            use: [{
+                loader: 'babel-loader',
+            }, {
+                loader: 'ts-loader',
+            }]
         }, {
             test: /\.css$/,
-            loader: ExtractTextPlugin.extract("css-loader")
+            use: [
+                'to-string-loader',
+                'css-loader',
+                {
+                    loader: 'postcss-loader',
+                      options: {
+                        plugins: function () {
+                            return [ autoprefixer ]
+                        }
+                    }
+                },
+            ]
+        }, 
+        {
+            test: /\.scss$/,
+            use: [
+                'to-string-loader',
+                'css-loader',
+                'sass-loader',
+                {
+                    loader: 'postcss-loader',
+                      options: {
+                        plugins: function () {
+                            return [ autoprefixer ]
+                        }
+                    }
+                },
+            ]
         }]
     },
-    plugins:[
-        new ExtractTextPlugin('[name].css'),
-    ]
 }
