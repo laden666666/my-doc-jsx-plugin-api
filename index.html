@@ -35,6 +35,13 @@
 * @param {string} searchText    key的模糊检索条件
 * @return {Array<string>}      返回匹配的数组
     `}</api>
+    <htmlExample>{
+`<div>1ewewe</div>
+<div>1ewewe</div>
+<script>
+    alert(1)
+</script>`
+    }</htmlExample>
 </doc>
         </textarea>
     </div>
@@ -50,7 +57,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-        myDocJsx.usePlugin(new myDocJsxPluginTemplate)
+        myDocJsx.usePlugin(new myDocJsxPluginAPI)
 
         renderDoc()
         document.querySelector("#docEdit").addEventListener("input", function () {

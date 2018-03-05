@@ -14,7 +14,7 @@ module.exports = merge(baseWebpackConfig, {
         new webpack.HotModuleReplacementPlugin(),
         // https://github.com/ampedandwired/html-webpack-plugin
         new HtmlWebpackPlugin({
-            chunks: ['myDocJsxPluginTemplate'],
+            chunks: ['myDocJsxPluginAPI'],
             filename: 'index.html',
             template: 'index.html',
             inject: true

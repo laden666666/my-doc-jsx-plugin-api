@@ -9,7 +9,7 @@ var autoprefixer = require('autoprefixer')({
 
 module.exports = {
     entry: {
-        'myDocJsxPluginAPI': ['./src/index.js'],
+        'myDocJsxPluginAPI': ['./src/index.ts'],
     },
     externals: {
         'my-doc-jsx': {
