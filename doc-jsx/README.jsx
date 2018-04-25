@@ -1,4 +1,79 @@
 <doc>
     <h1>my-doc-jsx-plugin-api</h1>
-    <p>my-doc-jsx-plugin-api是一个my-doc-jsx的插件，作用是使用语言的注释和源代码就可以生成文档。</p>
+    <p>my-doc-jsx-plugin-api是一个my-doc-jsx的插件，用于生成API文档。</p>
+    
+    <h2>安装</h2>
+    <p>从npm上面安装：</p>
+    <code>{
+`npm instlal my-doc-jsx-plugin-api --D`
+    }</code>
+    <p>如果是在nodejs或者浏览器中执行，使用jsxdoc的myDocJsx方法集成，nodejs：</p>
+    <code>{
+`const Plugin = require('my-doc-jsx-plugin-api')
+myDocJsx.usePlugin(new Plugin)`
+    }</code>
+    <p>浏览器中：</p>
+    <code>{
+`myDocJsx.usePlugin(new myDocJsxPluginAPI())`
+    }</code>
+    <p>cli环境下使用</p>
+    <code>{
+`docjsx c html --plugin my-doc-jsx-plugin-api index.jsx ./`
+    }</code>
+
+    <h2>注释生成函数文档</h2>
+    <p>该功能可以将函数的注释生成为说明函数用途、参数、返回值的文档，以table表格的形式展示，具体使用方法为：</p>
+    <code>{
+`<api>\{\`
+* 根据字符串模糊查询key，并返回匹配的缓存数组
+* @param {string} searchText    key的模糊检索条件
+* @return {Array<string>}      返回匹配的数组
+\`\}</api>`
+    }</code>
+    生成的效果为：
+    <api>{`
+    * 根据字符串模糊查询key，并返回匹配的缓存数组
+    * @param {string} searchText    key的模糊检索条件
+    * @return {Array<string>}      返回匹配的数组
+    `}</api>
+
+    <h2>展示HTML形式的例子</h2>
+    <p>该控件的功能为，运行HTML代码的显示效果，类似于jsfiddle这样的网站，不过该功能比jsfiddle简单很多，单机即可使用，同时可以展示HTML例子的代码。</p>
+    <p>该控件基于HTML的iframe标签总的srcdoc属性，因此在markdown、CSP策略中设置了child-src的页面、部分浏览器中无法使用。</p>
+    <p>具体使用方法为：</p>
+    <code>{
+`<htmlExample>\{
+\`
+<div id="app">
+    \{\{ message \}\}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '运行了vue!'
+        }
+    })
+</script>
+\`
+\}</htmlExample>`
+    }</code>
+    效果为：
+    <htmlExample>{
+`
+<div id="app">
+    {{ message }}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '运行了vue!'
+        }
+    })
+</script>
+`
+    }</htmlExample>
 </doc>
