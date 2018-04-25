@@ -36,11 +36,20 @@
 * @return {Array<string>}      返回匹配的数组
     `}</api>
     <htmlExample>{
-`<div>1ewewe</div>
-<div>1ewewe</div>
+`
+<div id="app">
+    {{ message }}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script>
-    alert(1)
-</script>`
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '运行了vue!'
+        }
+    })
+</script>
+`
     }</htmlExample>
 </doc>
         </textarea>

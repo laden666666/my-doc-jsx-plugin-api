@@ -1,7 +1,7 @@
 {
   "name": "my-doc-jsx-plugin-api",
   "version": "0.0.2",
-  "description": "my-doc-jsx的一个插件，用于根据注释生成api表格。",
+  "description": "my-doc-jsx的一个插件，用于根据注释、typescript接口生成api表格。",
   "main": "dist/myDocJsxPluginAPI.js",
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/laden666666/my-doc-jsx-plugin-pai#readme",
   "peerDependencies": {
-    "my-doc-jsx": "^0.1.2"
+    "my-doc-jsx": "^0.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
@@ -77,5 +77,8 @@
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
+  },
+  "dependencies": {
+    "my-doc-jsx": "^0.2.0"
   }
 }

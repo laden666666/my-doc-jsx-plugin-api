@@ -10,7 +10,7 @@ export class Parameter{
     default: string
 }
 
-export class Function{
+export class FunctionDescribe{
     name: string
     describe: string
     inputParameters: Parameter[]

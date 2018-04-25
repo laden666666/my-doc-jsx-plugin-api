@@ -1,3 +1,25 @@
 .mydoc_api_htmlExample{
     border: none;
+    position: relative;
+}
+.mydoc_api_htmlExample_iframe{
+    position: relative;
+    z-index: 1;
+    min-height: 100px;
+    width: 100%;
+    background-color: rgb(247, 247, 249);
+    border: 1px solid rgb(225, 225, 232);
+    border-radius: 0px 0px 4px 4px;
+    background: white;
+    box-sizing: border-box;
+}
+.mydoc_api_htmlExample_tip{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    z-index: 0;
+    font-size: 12px;
+    text-align: center;
 }

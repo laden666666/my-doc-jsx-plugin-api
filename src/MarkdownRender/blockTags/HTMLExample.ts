@@ -12,9 +12,7 @@ class HTMLExample extends BlockNode<MarkdownRender>{
     }
 
     render(render: MarkdownRender){
-        return `<iframe class="mydoc_api_htmlExample" ${this.props.height != null ? `height="${this.props.height}"` : ''} 
-    ${this.props.width != null ? `width="${this.props.width}"` : ''}    
-    srcdoc="${'<!DOCTYPE html>' + this.childPseudoNodes[0].getText().replace(/"/g, '\\"') || ''}"></iframe>`
+        return ``
     }
 }
 
