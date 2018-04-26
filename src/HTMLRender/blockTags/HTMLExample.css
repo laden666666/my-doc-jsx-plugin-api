@@ -1,11 +1,10 @@
-.mydoc_api_htmlExample{
+.mydoc_api_html-example{
     border: none;
     position: relative;
 }
-.mydoc_api_htmlExample_iframe{
+.mydoc_api_html-example_iframe{
     position: relative;
     z-index: 1;
-    min-height: 100px;
     width: 100%;
     background-color: rgb(247, 247, 249);
     border: 1px solid rgb(225, 225, 232);
@@ -13,7 +12,7 @@
     background: white;
     box-sizing: border-box;
 }
-.mydoc_api_htmlExample_tip{
+.mydoc_api_html-example_tip{
     position: absolute;
     top: 0;
     left: 0;
@@ -22,4 +21,7 @@
     z-index: 0;
     font-size: 12px;
     text-align: center;
+}
+.mydoc_api_html-example_summary{
+    cursor: pointer;
 }

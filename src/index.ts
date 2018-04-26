@@ -7,10 +7,10 @@ import markdownHTMLExample from './MarkdownRender/blockTags/HTMLExample'
 class Plugin extends BasePlugin{
     constructor(){
         super()
-        this.registerBlockNode('HTML', 'api' ,htmlAPI)
-        this.registerBlockNode('HTML', 'htmlExample' ,htmlHTMLExample)
-        this.registerBlockNode('MARKDOWN', 'api' ,markdownAPI)
-        this.registerBlockNode('MARKDOWN', 'htmlExample' ,markdownHTMLExample)
+        this.registerBlockNode('HTML', 'api', htmlAPI)
+        this.registerBlockNode('HTML', 'html-example', htmlHTMLExample)
+        this.registerBlockNode('MARKDOWN', 'api', markdownAPI)
+        this.registerBlockNode('MARKDOWN', 'html-example', htmlHTMLExample)
         
     }
 }
