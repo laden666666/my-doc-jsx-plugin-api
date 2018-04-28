@@ -34,31 +34,7 @@ docjsx c html --plugin my-doc-jsx-plugin-api index.jsx ./
 * @return {Array<string>}      返回匹配的数组
 `}</api>
 ```
+生成的效果为：
 
-## 展示HTML形式的例子
-该控件的功能为，运行HTML代码的显示效果，类似于jsfiddle这样的网站，不过该功能比jsfiddle简单很多，单机即可使用，同时可以展示HTML例子的代码。
-
-该控件基于HTML的iframe标签总的srcdoc属性，因此在markdown、CSP策略中设置了child-src的页面、部分浏览器中无法使用。
-
-具体使用方法为：
-
-```javascript
-<htmlExample>{
-`
-<div id="app">
-    {{ message }}
-</div>
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script>
-    var app = new Vue({
-        el: '#app',
-        data: {
-            message: '运行了vue!'
-        }
-    })
-</script>
-`
-}</htmlExample>
-```
 
 

@@ -233,31 +233,7 @@ myDocJsx<span class="token punctuation">.</span><span class="token function">use
 * @param {string} searchText    key的模糊检索条件
 * @return {Array&lt;string>}      返回匹配的数组
 `</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>api<span class="token operator">></span></pre>
-                </figure>
-                    </div>
-                </div><div class="mydoc_h2">
-                    <a class="mydoc_h2_a">
-                        <h2 class="mydoc_h2_h2">展示HTML形式的例子</h2>
-                    </a>
-                    <div class="mydoc_h2_content">
-                        <p class="mydoc_p"> 该控件的功能为，运行HTML代码的显示效果，类似于jsfiddle这样的网站，不过该功能比jsfiddle简单很多，单机即可使用，同时可以展示HTML例子的代码。</p><p class="mydoc_p"> 该控件基于HTML的iframe标签总的srcdoc属性，因此在markdown、CSP策略中设置了child-src的页面、部分浏览器中无法使用。</p><p class="mydoc_p"> 具体使用方法为：</p><figure class='mydoc_code'>
-                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token operator">&lt;</span>htmlExample<span class="token operator">></span><span class="token punctuation">{</span>
-<span class="token template-string"><span class="token string">`
-&lt;div id="app">
-    {{ message }}
-&lt;/div>
-&lt;script src="https://cdn.jsdelivr.net/npm/vue">&lt;/script>
-&lt;script>
-    var app = new Vue({
-        el: '#app',
-        data: {
-            message: '运行了vue!'
-        }
-    })
-&lt;/script>
-`</span></span>
-<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>htmlExample<span class="token operator">></span></pre>
-                </figure>
+                </figure><p class="mydoc_p"> 生成的效果为：</p>
                     </div>
                 </div>
 </article>

@@ -30,7 +30,7 @@ myDocJsx.usePlugin(new Plugin)`
 * @return {Array<string>}      返回匹配的数组
 \`\}</api>`
     }</code>
-    生成的效果为：
+    <p>生成的效果为：</p>
     <api>{`
     * 根据字符串模糊查询key，并返回匹配的缓存数组
     * @param {string} searchText    key的模糊检索条件
@@ -42,7 +42,7 @@ myDocJsx.usePlugin(new Plugin)`
     <p>该控件基于HTML的iframe标签总的srcdoc属性，因此在markdown、CSP策略中设置了child-src的页面、部分浏览器中无法使用。</p>
     <p>具体使用方法为：</p>
     <code>{
-`<htmlExample>\{
+`<html-example>\{
 \`
 <div id="app">
     \{\{ message \}\}
@@ -57,10 +57,10 @@ myDocJsx.usePlugin(new Plugin)`
     })
 </script>
 \`
-\}</htmlExample>`
+\}</html-example>`
     }</code>
-    效果为：
-    <htmlExample>{
+    <p>效果为：</p>
+    <html-example>{
 `
 <div id="app">
     {{ message }}
@@ -75,5 +75,5 @@ myDocJsx.usePlugin(new Plugin)`
     })
 </script>
 `
-    }</htmlExample>
+    }</html-example>
 </doc>
