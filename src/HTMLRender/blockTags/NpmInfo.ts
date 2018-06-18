@@ -1,12 +1,10 @@
 /**
- * Created by njz on 2017/3/26.
+ * Created by njz on 2018/6/18.
  */
-import {BlockNode, HTMLRender, jsxStr2Nodes} from "my-doc-jsx"
+import {BlockNode, HTMLRender} from "my-doc-jsx"
 declare function require(name: string);
 
-let style = require('./HtmlExample.css')
-
-class ProjectInfo extends BlockNode<HTMLRender>{
+class NpmInfo extends BlockNode<HTMLRender>{
     constructor(node){
         super(node)
         this.priority = 0;
@@ -22,5 +20,5 @@ class ProjectInfo extends BlockNode<HTMLRender>{
     }
 }
 
-export default ProjectInfo;
+export default NpmInfo;
 

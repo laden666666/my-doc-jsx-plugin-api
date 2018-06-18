@@ -1,12 +1,12 @@
 /**
  * Created by njz on 2017/3/26.
  */
-import {BlockNode, MarkdownRender, jsxStr2Nodes} from "my-doc-jsx"
+import {BlockNode, MarkdownRender} from "my-doc-jsx"
 declare function require(name: string);
 
 let style = require('./HtmlExample.css')
 
-class ProjectInfo extends BlockNode<MarkdownRender>{
+class NpmInfo extends BlockNode<MarkdownRender>{
     constructor(node){
         super(node)
         this.priority = 0;
@@ -22,5 +22,5 @@ class ProjectInfo extends BlockNode<MarkdownRender>{
     }
 }
 
-export default ProjectInfo;
+export default NpmInfo;
 
