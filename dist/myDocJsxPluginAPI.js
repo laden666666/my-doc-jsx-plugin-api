@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -180,8 +180,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 Object.defineProperty(exports, "__esModule", { value: true });
 var my_doc_jsx_1 = __webpack_require__(0);
 var API_1 = __webpack_require__(3);
-var API_2 = __webpack_require__(5);
+var API_2 = __webpack_require__(7);
 var HTMLExample_1 = __webpack_require__(4);
+var HTMLExample_2 = __webpack_require__(8);
+var browserList_1 = __webpack_require__(6);
+var browserList_2 = __webpack_require__(10);
+var NpmInfo_1 = __webpack_require__(5);
+var NpmInfo_2 = __webpack_require__(9);
 
 var Plugin = function (_my_doc_jsx_1$BasePlu) {
     _inherits(Plugin, _my_doc_jsx_1$BasePlu);
@@ -193,8 +198,12 @@ var Plugin = function (_my_doc_jsx_1$BasePlu) {
 
         _this.registerBlockNode('HTML', 'api', API_1.default);
         _this.registerBlockNode('HTML', 'html-example', HTMLExample_1.default);
+        _this.registerBlockNode('HTML', 'browser-list', browserList_1.default);
+        _this.registerBlockNode('HTML', 'npm-info', NpmInfo_1.default);
         _this.registerBlockNode('MARKDOWN', 'api', API_2.default);
-        _this.registerBlockNode('MARKDOWN', 'html-example', HTMLExample_1.default);
+        _this.registerBlockNode('MARKDOWN', 'html-example', HTMLExample_2.default);
+        _this.registerBlockNode('MARKDOWN', 'browser-list', browserList_2.default);
+        _this.registerBlockNode('MARKDOWN', 'npm-info', NpmInfo_2.default);
         return _this;
     }
 
@@ -223,7 +232,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * Created by njz on 2017/3/26.
  */
 var my_doc_jsx_1 = __webpack_require__(0);
-var style = __webpack_require__(8);
+var style = __webpack_require__(14);
 //查找参数的正则
 var paramRegex = /@param\s+({.*})?(\s+\S+)?(\s+.*)?$/;
 //查找返回值的正则
@@ -313,7 +322,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * Created by njz on 2017/3/26.
  */
 var my_doc_jsx_1 = __webpack_require__(0);
-var style = __webpack_require__(9);
+var style = __webpack_require__(15);
 
 var HtmlExample = function (_my_doc_jsx_1$BlockNo) {
     _inherits(HtmlExample, _my_doc_jsx_1$BlockNo);
@@ -323,7 +332,9 @@ var HtmlExample = function (_my_doc_jsx_1$BlockNo) {
 
         var _this = _possibleConstructorReturn(this, (HtmlExample.__proto__ || Object.getPrototypeOf(HtmlExample)).call(this, node));
 
+        _this.code = false;
         _this.priority = 0;
+        _this.code = !!_this.props['code'];
         return _this;
     }
 
@@ -332,7 +343,7 @@ var HtmlExample = function (_my_doc_jsx_1$BlockNo) {
         value: function render(_render) {
             _render.setStyle('html-example', style);
             var srcdoc = '<!DOCTYPE html>\n' + this.childPseudoNodes[0].getText() || '';
-            return "\n<div class=\"mydoc_api_html-example\">\n    <iframe class=\"mydoc_api_html-example_iframe\" " + (this.props.height != null ? "height=\"" + this.props.height + "\"" : '') + " \n        " + (this.props.width != null ? "width=\"" + this.props.width + "\"" : '') + "    \n        srcdoc=\"" + srcdoc.replace(/\"/g, '&#34;') + "\"></iframe>\n    <div class=\"mydoc_api_html-example_tip\">Your browser does not support the srcdoc attribute in the iframe. Or CSP prohibits the use of iframes.</div>\n    <details>\n        <summary class=\"mydoc_api_html-example_summary\">view code</summary>\n        <p>\n" + _render.renderBlockNodes(my_doc_jsx_1.jsxStr2Nodes("<code>{`" + srcdoc + "`}</code>", _render, {})) + "</p>\n        </details>\n    </div>\n";
+            return "\n<div class=\"mydoc_api_html-example\">\n    <iframe class=\"mydoc_api_html-example_iframe\" " + (this.props.height != null ? "height=\"" + this.props.height + "\"" : '') + " \n        " + (this.props.width != null ? "width=\"" + this.props.width + "\"" : '') + "    \n        srcdoc=\"" + srcdoc.replace(/\"/g, '&#34;') + "\"></iframe>\n    <div class=\"mydoc_api_html-example_tip\">Your browser does not support the srcdoc attribute in the iframe. Or CSP prohibits the use of iframes.</div>\n    " + (this.code ? "\n    <details>\n        <summary class=\"mydoc_api_html-example_summary\">view code</summary>\n        <p>\n" + _render.renderBlockNodes(my_doc_jsx_1.jsxStr2Nodes("<code>{`" + srcdoc + "`}</code>", _render, {})) + "</p>\n        </details>\n    " : '') + "\n    </div>\n";
         }
     }]);
 
@@ -343,6 +354,114 @@ exports.default = HtmlExample;
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Created by njz on 2018/6/18.
+ */
+var my_doc_jsx_1 = __webpack_require__(0);
+var style = __webpack_require__(16);
+
+var NpmInfo = function (_my_doc_jsx_1$BlockNo) {
+    _inherits(NpmInfo, _my_doc_jsx_1$BlockNo);
+
+    function NpmInfo(node) {
+        _classCallCheck(this, NpmInfo);
+
+        var _this = _possibleConstructorReturn(this, (NpmInfo.__proto__ || Object.getPrototypeOf(NpmInfo)).call(this, node));
+
+        _this.priority = 0;
+        return _this;
+    }
+
+    _createClass(NpmInfo, [{
+        key: "render",
+        value: function render(_render) {
+            _render.setStyle('npm-info', style);
+            var name = this.props.name;
+            if (name == null || name === '') {
+                console.warn("NpmInfo is missing the name attribute");
+                return '';
+            } else {
+                return "<p class=\"mydoc_api_npm-info\" align=\"center\">\n                " + (this.props.version ? "<a href=\"https://www.npmjs.com/package/" + name + "\"><img src=\"https://img.shields.io/npm/v/" + name + ".svg\" alt=\"Version\"></a>" : '') + "\n                " + (this.props.downloads ? "<a href=\"https://www.npmjs.com/package/" + name + "\"><img src=\"https://img.shields.io/npm/dm/" + name + ".svg\" alt=\"Downloads\"></a>" : '') + "\n                " + (this.props.license ? "<a href=\"https://www.npmjs.com/package/" + name + "\"><img src=\"https://img.shields.io/npm/l/" + name + ".svg\" alt=\"License\"></a>" : '') + "\n            </p>";
+            }
+        }
+    }]);
+
+    return NpmInfo;
+}(my_doc_jsx_1.BlockNode);
+
+exports.default = NpmInfo;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Created by njz on 2018/6/18.
+ */
+var my_doc_jsx_1 = __webpack_require__(0);
+
+var browserList = function (_my_doc_jsx_1$BlockNo) {
+    _inherits(browserList, _my_doc_jsx_1$BlockNo);
+
+    function browserList(node) {
+        _classCallCheck(this, browserList);
+
+        var _this = _possibleConstructorReturn(this, (browserList.__proto__ || Object.getPrototypeOf(browserList)).call(this, node));
+
+        _this.priority = 0;
+        return _this;
+    }
+
+    _createClass(browserList, [{
+        key: "render",
+        value: function render(_render) {
+            var _this2 = this;
+
+            var browserList = Object.keys(this.props);
+            browserList.filter(function (browser) {
+                return _this2.props[browser] != null;
+            });
+            return _render.renderBlockNodes(my_doc_jsx_1.jsxStr2Nodes("<table>\n            <tr>\n            " + browserList.map(function (browser) {
+                return "<th align=\"center\">" + browser + "</th>";
+            }).join('') + "\n            </tr>\n            <tr>\n            " + browserList.map(function (browser) {
+                return "<td align=\"center\">" + (_this2.props[browser] === true ? '√' : _this2.props[browser]) + "</td>";
+            }).join('') + "\n            </tr>\n        </table>", _render, null));
+        }
+    }]);
+
+    return browserList;
+}(my_doc_jsx_1.BlockNode);
+
+exports.default = browserList;
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -430,7 +549,154 @@ var API = function (_my_doc_jsx_1$BlockNo) {
 exports.default = API;
 
 /***/ }),
-/* 6 */
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Created by njz on 2017/3/26.
+ */
+var my_doc_jsx_1 = __webpack_require__(0);
+
+var HTMLExample = function (_my_doc_jsx_1$BlockNo) {
+    _inherits(HTMLExample, _my_doc_jsx_1$BlockNo);
+
+    function HTMLExample(node) {
+        _classCallCheck(this, HTMLExample);
+
+        var _this = _possibleConstructorReturn(this, (HTMLExample.__proto__ || Object.getPrototypeOf(HTMLExample)).call(this, node));
+
+        _this.priority = 0;
+        return _this;
+    }
+
+    _createClass(HTMLExample, [{
+        key: "render",
+        value: function render(_render) {
+            return "";
+        }
+    }]);
+
+    return HTMLExample;
+}(my_doc_jsx_1.BlockNode);
+
+exports.default = HTMLExample;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Created by njz on 2017/3/26.
+ */
+var my_doc_jsx_1 = __webpack_require__(0);
+
+var NpmInfo = function (_my_doc_jsx_1$BlockNo) {
+    _inherits(NpmInfo, _my_doc_jsx_1$BlockNo);
+
+    function NpmInfo(node) {
+        _classCallCheck(this, NpmInfo);
+
+        var _this = _possibleConstructorReturn(this, (NpmInfo.__proto__ || Object.getPrototypeOf(NpmInfo)).call(this, node));
+
+        _this.priority = 0;
+        return _this;
+    }
+
+    _createClass(NpmInfo, [{
+        key: "render",
+        value: function render(_render) {
+            var name = this.props.name;
+            return "<p class=\"mydoc_api_npm-info\" align=\"center\">\n            " + (this.props.version ? "<a href=\"https://www.npmjs.com/package/" + name + "\"><img src=\"https://img.shields.io/npm/v/" + name + ".svg\" alt=\"Version\"></a>" : '') + "\n            " + (this.props.downloads ? "<a href=\"https://www.npmjs.com/package/" + name + "\"><img src=\"https://img.shields.io/npm/dm/" + name + ".svg\" alt=\"Downloads\"></a>" : '') + "\n            " + (this.props.license ? "<a href=\"https://www.npmjs.com/package/" + name + "\"><img src=\"https://img.shields.io/npm/l/" + name + ".svg\" alt=\"License\"></a>" : '') + "\n        </p>";
+        }
+    }]);
+
+    return NpmInfo;
+}(my_doc_jsx_1.BlockNode);
+
+exports.default = NpmInfo;
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Created by njz on 2018/6/18.
+ */
+var my_doc_jsx_1 = __webpack_require__(0);
+
+var browserList = function (_my_doc_jsx_1$BlockNo) {
+    _inherits(browserList, _my_doc_jsx_1$BlockNo);
+
+    function browserList(node) {
+        _classCallCheck(this, browserList);
+
+        var _this = _possibleConstructorReturn(this, (browserList.__proto__ || Object.getPrototypeOf(browserList)).call(this, node));
+
+        _this.priority = 0;
+        return _this;
+    }
+
+    _createClass(browserList, [{
+        key: "render",
+        value: function render(_render) {
+            var _this2 = this;
+
+            var browserList = ['Android', 'Firefox', 'Chrome', 'IE', 'iPhone', 'Edge', 'Safari'];
+            browserList.filter(function (browser) {
+                return _this2.props[browser] != null;
+            });
+            var name = this.props.ie;
+            return _render.renderBlockNodes(my_doc_jsx_1.jsxStr2Nodes("<table>\n            <tr>\n            " + browserList.map(function (browser) {
+                return "<th>" + browser + "<th>";
+            }) + "\n            </tr>\n            <tr>\n            " + browserList.map(function (browser) {
+                return "<td>" + _this2.props[browser] + "<td>";
+            }) + "\n            </tr>\n        </table>", _render, null));
+        }
+    }]);
+
+    return browserList;
+}(my_doc_jsx_1.BlockNode);
+
+exports.default = browserList;
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -444,7 +710,7 @@ exports.push([module.i, ".mydoc_api{\r\n    line-height: 16px;\r\n    position: 
 
 
 /***/ }),
-/* 7 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -458,11 +724,25 @@ exports.push([module.i, ".mydoc_api_html-example{\r\n    border: none;\r\n    po
 
 
 /***/ }),
-/* 8 */
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".mydoc_api_npm-info{\r\n    line-height: 1.6em;\r\n    margin: 1.2em 0 -1.2em;\r\n    padding-bottom: 1.2em;\r\n    position: relative;\r\n    z-index: 1;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(6);
+        var result = __webpack_require__(11);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -472,11 +752,11 @@ exports.push([module.i, ".mydoc_api_html-example{\r\n    border: none;\r\n    po
     
 
 /***/ }),
-/* 9 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(7);
+        var result = __webpack_require__(12);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -486,7 +766,21 @@ exports.push([module.i, ".mydoc_api_html-example{\r\n    border: none;\r\n    po
     
 
 /***/ }),
-/* 10 */
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(13);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
