@@ -23,16 +23,12 @@
             border: 0;
         }
     </style>
-    <link href="./static/myDocJsx.css" rel="stylesheet">
 </head>
 <body>
     <div id="frame">
         <div id="doc"></div>
         <textarea id="docEdit">
 <doc>
-    <h1>浏览器兼容</h1>
-    
-
     <h1>my-doc-jsx-plugin-api</h1>
     <p>my-doc-jsx-plugin-api是一个my-doc-jsx的插件，用于生成API文档。</p>
     
@@ -114,9 +110,10 @@ myDocJsx.usePlugin(new Plugin)`
             
         </textarea>
     </div>
-    <script src="./static/react.js"></script>
-    <script src="./static/babel.js"></script>
-    <script src="./static/myDocJsx.js"></script>
+    <script src="./react.js"></script>
+    <script src="./babel.js"></script>
+	<script src="./myDocJsx.js"></script>
+	<script src="./myDocJsxPluginAPI.js"></script>
 <script>
 
     function renderDoc() {
