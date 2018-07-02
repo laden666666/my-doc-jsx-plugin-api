@@ -1,34 +1,33 @@
 /**
  * Created by njz on 2018/6/18.
  */
-import {BlockNode, MarkdownRender, jsxStr2Nodes} from "my-doc-jsx"
+import {BlockNode, HTMLRender, jsxStr2Nodes} from "my-doc-jsx"
 declare function require(name: string);
 
-class BrowserCompatible extends BlockNode<MarkdownRender>{
+class browserList extends BlockNode<HTMLRender>{
     constructor(node){
         super(node)
         this.priority = 0;
     }
-    render(render: MarkdownRender){
-        const browserList = ['Android', 'Firefox', 'Chrome', 'IE', 'iPhone', 'Edge', 'Safari']
+    render(render: HTMLRender){
+        const browserList = Object.keys(this.props)
         
         browserList.filter(browser => this.props[browser] != null)
         
-        let name = this.props.ie
         return render.renderBlockNodes(jsxStr2Nodes(`<table>
             <tr>
             ${
-                browserList.map(browser=>`<th>${ browser }<th>`)
+                browserList.map(browser=>`<th align="center">${ browser }</th>`).join('')
             }
             </tr>
             <tr>
             ${
-                browserList.map(browser=>`<td>${ this.props[browser] }<td>`)
+                browserList.map(browser=>`<td align="center">${ this.props[browser] === true ? '√' : this.props[browser] }</td>`).join('')
             }
             </tr>
         </table>`, render, null))
     }
 }
 
-export default BrowserCompatible;
+export default browserList;
 

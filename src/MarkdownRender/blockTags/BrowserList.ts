@@ -1,15 +1,15 @@
 /**
  * Created by njz on 2018/6/18.
  */
-import {BlockNode, HTMLRender, jsxStr2Nodes} from "my-doc-jsx"
+import {BlockNode, MarkdownRender, jsxStr2Nodes} from "my-doc-jsx"
 declare function require(name: string);
 
-class BrowserCompatible extends BlockNode<HTMLRender>{
+class browserList extends BlockNode<MarkdownRender>{
     constructor(node){
         super(node)
         this.priority = 0;
     }
-    render(render: HTMLRender){
+    render(render: MarkdownRender){
         const browserList = ['Android', 'Firefox', 'Chrome', 'IE', 'iPhone', 'Edge', 'Safari']
         
         browserList.filter(browser => this.props[browser] != null)
@@ -30,5 +30,5 @@ class BrowserCompatible extends BlockNode<HTMLRender>{
     }
 }
 
-export default BrowserCompatible;
+export default browserList;
 

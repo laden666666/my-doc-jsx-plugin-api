@@ -30,29 +30,46 @@
         <div id="doc"></div>
         <textarea id="docEdit">
 <doc>
-    <h1>浏览器兼容</h1>
-    
-
     <h1>my-doc-jsx-plugin-api</h1>
     <p>my-doc-jsx-plugin-api是一个my-doc-jsx的插件，用于生成API文档。</p>
+
+    <h2>使用</h2>
     
-    <h2>安装</h2>
-    <p>从npm上面安装：</p>
     <code>{
 `npm instlal my-doc-jsx-plugin-api --D`
     }</code>
+    
     <p>如果是在nodejs或者浏览器中执行，使用jsxdoc的myDocJsx方法集成，nodejs：</p>
     <code>{
 `const Plugin = require('my-doc-jsx-plugin-api')
 myDocJsx.usePlugin(new Plugin)`
     }</code>
+    
     <p>浏览器中：</p>
     <code>{
 `myDocJsx.usePlugin(new myDocJsxPluginAPI())`
     }</code>
+    
     <p>cli环境下使用</p>
     <code>{
 `docjsx c html --plugin my-doc-jsx-plugin-api index.jsx ./`
+    }</code>
+    
+    <h2>项目logo</h2>
+    <p>用于展示项目的logo</p>
+
+    <h2>npm信息</h2>
+    <p>用于展示项目的logo，主要是基于img.shields.io这个网站来生成项目和npm相关的信息。</p>
+    <npmInfo version downloads license name="my-doc-jsx-plugin-api"></npmInfo>
+    <code>{
+`<npmInfo version downloads license name="my-doc-jsx-plugin-api"></npmInfo>`
+    }</code>
+
+    <h2>浏览器兼容性</h2>
+    <p>用于生成一个展示项目浏览器兼容性表格的标签</p>
+    <browser-list Android=">4.4" Firefox Chrome IE=">8" iPhone Edge Safari/>
+    <code>{
+`<browser-list Android=">4.4" Firefox Chrome IE=">8" iPhone Edge Safari/>`
     }</code>
 
     <h2>注释生成函数文档</h2>
@@ -76,7 +93,7 @@ myDocJsx.usePlugin(new Plugin)`
     <p>该控件基于HTML的iframe标签总的srcdoc属性，因此在markdown、CSP策略中设置了child-src的页面、部分浏览器中无法使用。</p>
     <p>具体使用方法为：</p>
     <code>{
-`<html-example>\{
+`<html-example code>\{
 \`
 <div id="app">
     \{\{ message \}\}
@@ -94,7 +111,7 @@ myDocJsx.usePlugin(new Plugin)`
 \}</html-example>`
     }</code>
     <p>效果为：</p>
-    <html-example>{
+    <html-example code>{
 `
 <div id="app">
     {{ message }}

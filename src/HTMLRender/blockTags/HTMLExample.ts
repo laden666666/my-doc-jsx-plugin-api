@@ -10,7 +10,11 @@ class HtmlExample extends BlockNode<HTMLRender>{
     constructor(node){
         super(node)
         this.priority = 0;
+
+        this.code = !!this.props['code']
     }
+
+    code: boolean = false
 
     render(render: HTMLRender){
         render.setStyle('html-example', style)
@@ -21,6 +25,7 @@ class HtmlExample extends BlockNode<HTMLRender>{
         ${this.props.width != null ? `width="${this.props.width}"` : ''}    
         srcdoc="${ srcdoc.replace(/\"/g, '&#34;') }"></iframe>
     <div class="mydoc_api_html-example_tip">Your browser does not support the srcdoc attribute in the iframe. Or CSP prohibits the use of iframes.</div>
+    ${this.code ? `
     <details>
         <summary class="mydoc_api_html-example_summary">view code</summary>
         <p>
@@ -28,6 +33,7 @@ ${
             render.renderBlockNodes(jsxStr2Nodes(`<code>{\`${srcdoc}\`}</code>`, render, {}))
 }</p>
         </details>
+    `: ''}
     </div>
 `
     }
