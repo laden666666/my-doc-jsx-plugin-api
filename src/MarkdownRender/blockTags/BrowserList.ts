@@ -18,12 +18,12 @@ class browserList extends BlockNode<MarkdownRender>{
         return render.renderBlockNodes(jsxStr2Nodes(`<table>
             <tr>
             ${
-                browserList.map(browser=>`<th>${ browser }<th>`)
+                browserList.map(browser=>`<th align="center">${ browser }</th>`).join('')
             }
             </tr>
             <tr>
             ${
-                browserList.map(browser=>`<td>${ this.props[browser] }<td>`)
+                browserList.map(browser=>`<td align="center">${ this.props[browser] }</td>`).join('')
             }
             </tr>
         </table>`, render, null))

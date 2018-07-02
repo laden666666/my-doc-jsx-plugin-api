@@ -194,6 +194,61 @@ pre[class*="language-"] {
     padding: 1.2em 1.4em;
     line-height: 1.5em;
     margin: 0;
+}.mydoc_api_npm-info{
+    line-height: 1.6em;
+    margin: 1.2em 0 -1.2em;
+    padding-bottom: 1.2em;
+    position: relative;
+    z-index: 1;
+}.mydoc_table{
+    margin : 15px 0px 0px ;
+    padding : 0px ;
+    border : 1px solid rgb(170, 170, 170) ;
+    border-collapse : collapse ;
+    width : 100% ;
+    color : rgb(0, 0, 0) ;
+    font-size : 14px ;
+    background-color : rgb(253, 252, 248) ;
+}
+
+.mydoc_table .mydoc_tr{
+    margin : 0px ;
+    padding : 0px ;
+    border : 0px ;
+    background-color : rgb(255, 255, 255) ;
+}
+.mydoc_table .mydoc_tr:nth-child(odd){
+    background-color : rgb(245, 245, 245) ;
+}
+.mydoc_table .mydoc_tr:nth-child(1){
+    background-color : rgb(63, 63, 63);
+}
+
+.mydoc_table .mydoc_th{
+    margin : 0px ;
+    padding : 5px 15px 5px 6px ;
+    border : 1px solid rgb(63, 63, 63) ;
+    vertical-align : baseline ;
+    background-color : rgb(63, 63, 63) ;
+    text-align : left ;
+    color : rgb(255, 255, 255) ;
+    width : 123px ;
+    word-break: break-all;
+    font-weight: normal;
+}
+
+.mydoc_table .mydoc_td{
+    margin : 0px ;
+    padding : 6px 15px 6px 6px ;
+    border : 1px solid rgb(170, 170, 170) ;
+    vertical-align : text-top ;
+    word-break: break-all;
+}
+.mydoc_table .mydoc_td{
+    margin : 0px ;
+    padding : 6px 15px 6px 6px ;
+    border : 1px solid rgb(170, 170, 170) ;
+    vertical-align : text-top ;
 }.mydoc_api{
     line-height: 16px;
     position: relative;
@@ -319,10 +374,10 @@ pre[class*="language-"] {
                 </div>
             </div><p class="mydoc_p"> my-doc-jsx-plugin-api是一个my-doc-jsx的插件，用于生成API文档。</p><div class="mydoc_h2">
                     <a class="mydoc_h2_a">
-                        <h2 class="mydoc_h2_h2">安装</h2>
+                        <h2 class="mydoc_h2_h2">使用</h2>
                     </a>
                     <div class="mydoc_h2_content">
-                        <p class="mydoc_p"> 从npm上面安装：</p><figure class='mydoc_code'>
+                        <figure class='mydoc_code'>
                     <pre class="mydoc_code_pre cm-s-eclipse">npm instlal my<span class="token operator">-</span>doc<span class="token operator">-</span>jsx<span class="token operator">-</span>plugin<span class="token operator">-</span>api <span class="token operator">--</span>D</pre>
                 </figure><p class="mydoc_p"> 如果是在nodejs或者浏览器中执行，使用jsxdoc的myDocJsx方法集成，nodejs：</p><figure class='mydoc_code'>
                     <pre class="mydoc_code_pre cm-s-eclipse"><span class="token keyword">const</span> Plugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'my-doc-jsx-plugin-api'</span><span class="token punctuation">)</span>
@@ -331,6 +386,35 @@ myDocJsx<span class="token punctuation">.</span><span class="token function">use
                     <pre class="mydoc_code_pre cm-s-eclipse">myDocJsx<span class="token punctuation">.</span><span class="token function">usePlugin</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">myDocJsxPluginAPI</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre>
                 </figure><p class="mydoc_p"> cli环境下使用</p><figure class='mydoc_code'>
                     <pre class="mydoc_code_pre cm-s-eclipse">docjsx c html <span class="token operator">--</span>plugin my<span class="token operator">-</span>doc<span class="token operator">-</span>jsx<span class="token operator">-</span>plugin<span class="token operator">-</span>api index<span class="token punctuation">.</span>jsx <span class="token punctuation">.</span><span class="token operator">/</span></pre>
+                </figure>
+                    </div>
+                </div><div class="mydoc_h2">
+                    <a class="mydoc_h2_a">
+                        <h2 class="mydoc_h2_h2">项目logo</h2>
+                    </a>
+                    <div class="mydoc_h2_content">
+                        <p class="mydoc_p"> 用于展示项目的logo</p>
+                    </div>
+                </div><div class="mydoc_h2">
+                    <a class="mydoc_h2_a">
+                        <h2 class="mydoc_h2_h2">npm信息</h2>
+                    </a>
+                    <div class="mydoc_h2_content">
+                        <p class="mydoc_p"> 用于展示项目的logo，主要是基于img.shields.io这个网站来生成项目和npm相关的信息。</p><p class="mydoc_api_npm-info" align="center">
+                <a href="https://www.npmjs.com/package/my-doc-jsx-plugin-api"><img src="https://img.shields.io/npm/v/my-doc-jsx-plugin-api.svg" alt="Version"></a>
+                <a href="https://www.npmjs.com/package/my-doc-jsx-plugin-api"><img src="https://img.shields.io/npm/dm/my-doc-jsx-plugin-api.svg" alt="Downloads"></a>
+                <a href="https://www.npmjs.com/package/my-doc-jsx-plugin-api"><img src="https://img.shields.io/npm/l/my-doc-jsx-plugin-api.svg" alt="License"></a>
+            </p><figure class='mydoc_code'>
+                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token operator">&lt;</span>npm<span class="token operator">-</span>info version downloads license name<span class="token operator">=</span><span class="token string">"my-doc-jsx-plugin-api"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>npm<span class="token operator">-</span>info<span class="token operator">></span></pre>
+                </figure>
+                    </div>
+                </div><div class="mydoc_h2">
+                    <a class="mydoc_h2_a">
+                        <h2 class="mydoc_h2_h2">浏览器兼容性</h2>
+                    </a>
+                    <div class="mydoc_h2_content">
+                        <p class="mydoc_p"> 用于生成一个展示项目浏览器兼容性表格的标签</p><table class="mydoc_table"><tr class="mydoc_tr"><th class="mydoc_th">Android</th><th class="mydoc_th">Firefox</th><th class="mydoc_th">Chrome</th><th class="mydoc_th">IE</th><th class="mydoc_th">iPhone</th><th class="mydoc_th">Edge</th><th class="mydoc_th">Safari</th></tr><tr class="mydoc_tr"><td class="mydoc_td">&gt;4.4</td><td class="mydoc_td">√</td><td class="mydoc_td">√</td><td class="mydoc_td">&gt;8</td><td class="mydoc_td">√</td><td class="mydoc_td">√</td><td class="mydoc_td">√</td></tr></table><figure class='mydoc_code'>
+                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token operator">&lt;</span>browser<span class="token operator">-</span>list Android<span class="token operator">=</span><span class="token string">">4.4"</span> Firefox Chrome IE<span class="token operator">=</span><span class="token string">">8"</span> iPhone Edge Safari<span class="token operator">/</span><span class="token operator">></span></pre>
                 </figure>
                     </div>
                 </div><div class="mydoc_h2">
@@ -381,7 +465,7 @@ myDocJsx<span class="token punctuation">.</span><span class="token function">use
                     </a>
                     <div class="mydoc_h2_content">
                         <p class="mydoc_p"> 该控件的功能为，运行HTML代码的显示效果，类似于jsfiddle这样的网站，不过该功能比jsfiddle简单很多，单机即可使用，同时可以展示HTML例子的代码。</p><p class="mydoc_p"> 该控件基于HTML的iframe标签总的srcdoc属性，因此在markdown、CSP策略中设置了child-src的页面、部分浏览器中无法使用。</p><p class="mydoc_p"> 具体使用方法为：</p><figure class='mydoc_code'>
-                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token operator">&lt;</span>html<span class="token operator">-</span>example<span class="token operator">></span><span class="token punctuation">{</span>
+                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token operator">&lt;</span>html<span class="token operator">-</span>example code<span class="token operator">></span><span class="token punctuation">{</span>
 <span class="token template-string"><span class="token string">`
 &lt;div id="app">
     {{ message }}
@@ -417,6 +501,27 @@ myDocJsx<span class="token punctuation">.</span><span class="token function">use
 </script>
 "></iframe>
     <div class="mydoc_api_html-example_tip">Your browser does not support the srcdoc attribute in the iframe. Or CSP prohibits the use of iframes.</div>
+    
+    <details>
+        <summary class="mydoc_api_html-example_summary">view code</summary>
+        <p>
+<figure class='mydoc_code'>
+                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+    <span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://cdn.jsdelivr.net/npm/vue"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+        data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            message<span class="token punctuation">:</span> <span class="token string">'运行了vue!'</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></pre>
+                </figure></p>
+        </details>
     
     </div>
 

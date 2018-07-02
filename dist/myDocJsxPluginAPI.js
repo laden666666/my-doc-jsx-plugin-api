@@ -683,10 +683,10 @@ var browserList = function (_my_doc_jsx_1$BlockNo) {
             });
             var name = this.props.ie;
             return _render.renderBlockNodes(my_doc_jsx_1.jsxStr2Nodes("<table>\n            <tr>\n            " + browserList.map(function (browser) {
-                return "<th>" + browser + "<th>";
-            }) + "\n            </tr>\n            <tr>\n            " + browserList.map(function (browser) {
-                return "<td>" + _this2.props[browser] + "<td>";
-            }) + "\n            </tr>\n        </table>", _render, null));
+                return "<th align=\"center\">" + browser + "</th>";
+            }).join('') + "\n            </tr>\n            <tr>\n            " + browserList.map(function (browser) {
+                return "<td align=\"center\">" + _this2.props[browser] + "</td>";
+            }).join('') + "\n            </tr>\n        </table>", _render, null));
         }
     }]);
 

@@ -1,9 +1,7 @@
 # my-doc-jsx-plugin-api
 my-doc-jsx-plugin-api是一个my-doc-jsx的插件，用于生成API文档。
 
-## 安装
-从npm上面安装：
-
+## 使用
 ```javascript
 npm instlal my-doc-jsx-plugin-api --D
 ```
@@ -22,6 +20,30 @@ cli环境下使用
 
 ```javascript
 docjsx c html --plugin my-doc-jsx-plugin-api index.jsx ./
+```
+
+## 项目logo
+用于展示项目的logo
+
+
+## npm信息
+用于展示项目的logo，主要是基于img.shields.io这个网站来生成项目和npm相关的信息。
+
+<p class="mydoc_api_npm-info" align="center">
+            <a href="https://www.npmjs.com/package/my-doc-jsx-plugin-api"><img src="https://img.shields.io/npm/v/my-doc-jsx-plugin-api.svg" alt="Version"></a>
+            <a href="https://www.npmjs.com/package/my-doc-jsx-plugin-api"><img src="https://img.shields.io/npm/dm/my-doc-jsx-plugin-api.svg" alt="Downloads"></a>
+            <a href="https://www.npmjs.com/package/my-doc-jsx-plugin-api"><img src="https://img.shields.io/npm/l/my-doc-jsx-plugin-api.svg" alt="License"></a>
+        </p>```javascript
+<npm-info version downloads license name="my-doc-jsx-plugin-api"></npm-info>
+```
+
+## 浏览器兼容性
+用于生成一个展示项目浏览器兼容性表格的标签
+
+|Android|Firefox|Chrome|IE|iPhone|Edge|Safari|
+|----|----|----|----|----|----|----|
+|&gt;4.4|true|true|&gt;8|true|true|true|```javascript
+<browser-list Android=">4.4" Firefox Chrome IE=">8" iPhone Edge Safari/>
 ```
 
 ## 注释生成函数文档
@@ -62,7 +84,7 @@ docjsx c html --plugin my-doc-jsx-plugin-api index.jsx ./
 具体使用方法为：
 
 ```javascript
-<html-example>{
+<html-example code>{
 `
 <div id="app">
     {{ message }}
