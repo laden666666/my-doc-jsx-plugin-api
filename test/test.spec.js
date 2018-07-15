@@ -3,7 +3,7 @@ import Plugin from '../src/index'
 
 var assert = require('chai').assert;
 
-describe('myDocJsx基本功能测试', function() {
+describe('myDocJsx基本功能测试', async function() {
     it('转换测试', function() {
         myDocJsx.usePlugin(new Plugin)
         var jsxStr =
@@ -30,7 +30,7 @@ describe('myDocJsx基本功能测试', function() {
 \`
     }</html-example>
 </doc>`
-        var htmlStr = myDocJsx.convert(jsxStr)
+        var htmlStr = await myDocJsx.convert(jsxStr)
         console.log(htmlStr)
     });
 });

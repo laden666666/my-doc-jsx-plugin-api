@@ -11,7 +11,7 @@ class HTMLExample extends BlockNode<MarkdownRender>{
         this.priority = 0;
     }
 
-    render(render: MarkdownRender){
+    async render(render: MarkdownRender){
         return ``
     }
 }

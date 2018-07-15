@@ -11,7 +11,7 @@ class NpmInfo extends BlockNode<HTMLRender>{
         this.priority = 0;
     }
 
-    render(render: HTMLRender){
+    async render(render: HTMLRender){
         render.setStyle('npm-info', style)
         let name = this.props.name
         if(name == null || name === ''){

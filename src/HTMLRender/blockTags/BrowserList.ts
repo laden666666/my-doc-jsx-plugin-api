@@ -9,7 +9,7 @@ class browserList extends BlockNode<HTMLRender>{
         super(node)
         this.priority = 0;
     }
-    render(render: HTMLRender){
+    async render(render: HTMLRender){
         const browserList = Object.keys(this.props)
         
         browserList.filter(browser => this.props[browser] != null)

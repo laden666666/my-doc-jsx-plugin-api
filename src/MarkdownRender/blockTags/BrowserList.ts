@@ -9,12 +9,11 @@ class browserList extends BlockNode<MarkdownRender>{
         super(node)
         this.priority = 0;
     }
-    render(render: MarkdownRender){
+    async render(render: MarkdownRender){
         const browserList = ['Android', 'Firefox', 'Chrome', 'IE', 'iPhone', 'Edge', 'Safari']
         
         browserList.filter(browser => this.props[browser] != null)
         
-        let name = this.props.ie
         return render.renderBlockNodes(jsxStr2Nodes(`<table>
             <tr>
             ${
@@ -31,4 +30,3 @@ class browserList extends BlockNode<MarkdownRender>{
 }
 
 export default browserList;
-

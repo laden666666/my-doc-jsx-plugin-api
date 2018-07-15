@@ -138,8 +138,9 @@ myDocJsx.usePlugin(new Plugin)`
 
     function renderDoc() {
         var text = document.querySelector("#docEdit").value;
-        var script = myDocJsx.convert(text);
-        document.querySelector('#doc').innerHTML = script;
+        myDocJsx.convert(text).then(function(script){
+            document.querySelector('#doc').innerHTML = script;
+        });
     }
 
     document.addEventListener("DOMContentLoaded", function () {

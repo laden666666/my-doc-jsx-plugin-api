@@ -16,7 +16,7 @@ class HtmlExample extends BlockNode<HTMLRender>{
 
     code: boolean = false
 
-    render(render: HTMLRender){
+    async render(render: HTMLRender){
         render.setStyle('html-example', style)
         var srcdoc = ('<!DOCTYPE html>\n' + this.childPseudoNodes[0].getText() || '')
         return `

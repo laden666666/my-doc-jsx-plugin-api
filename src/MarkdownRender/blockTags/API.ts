@@ -15,8 +15,8 @@ class API extends BlockNode<MarkdownRender>{
         this.priority = 0;
     }
 
-    render(render: MarkdownRender){
-        let str = render.renderInlineNodes(this.childPseudoNodes)
+    async render(render: MarkdownRender){
+        let str = await render.renderInlineNodes(this.childPseudoNodes)
 
         //将注释代码以“*”分割，因为每个个“*”是一行
         let rows: string[] = str.split("*").map(str=>str.trim()).filter(str=> str != '<br/>')

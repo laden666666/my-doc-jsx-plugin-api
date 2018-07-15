@@ -18,9 +18,9 @@ class API extends BlockNode<HTMLRender>{
         this.priority = 0;
     }
 
-    render(render: HTMLRender){
+    async render(render: HTMLRender){
         render.setStyle('api', style)
-        let str = render.renderInlineNodes(this.childPseudoNodes)
+        let str = await render.renderInlineNodes(this.childPseudoNodes)
 
         //将注释代码以“*”分割，因为每个个“*”是一行
         let rows = str.split("*").map(str=>str.trim()).filter(str=> str != '<br/>')

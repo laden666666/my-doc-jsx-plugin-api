@@ -8,6 +8,9 @@ import markdownbrowserList from './MarkdownRender/blockTags/browserList'
 import htmlNpmInfo from './HTMLRender/blockTags/NpmInfo'
 import markdownNpmInfo from './MarkdownRender/blockTags/NpmInfo'
 
+//当前版本
+//通过DefinePlugin对去package.json的版本
+declare const PLUGIN_VERSION: string;
 class Plugin extends BasePlugin{
     constructor(){
         super()
@@ -19,8 +22,9 @@ class Plugin extends BasePlugin{
         this.registerBlockNode('MARKDOWN', 'html-example', markdownHTMLExample)
         this.registerBlockNode('MARKDOWN', 'browser-list', markdownbrowserList)
         this.registerBlockNode('MARKDOWN', 'npm-info', markdownNpmInfo)
-        
     }
+
+    static version: string = PLUGIN_VERSION
 }
 
 declare const module: {

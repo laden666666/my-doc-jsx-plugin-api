@@ -9,7 +9,7 @@ class NpmInfo extends BlockNode<MarkdownRender>{
         this.priority = 0;
     }
 
-    render(render: MarkdownRender){
+    async render(render: MarkdownRender){
         let name = this.props.name
         return `<p class="mydoc_api_npm-info" align="center">
             ${this.props.version ? `<a href="https://www.npmjs.com/package/${name}"><img src="https://img.shields.io/npm/v/${name}.svg" alt="Version"></a>` : ''}
