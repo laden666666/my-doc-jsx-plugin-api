@@ -3,8 +3,8 @@ import Plugin from '../src/index'
 
 var assert = require('chai').assert;
 
-describe('myDocJsx基本功能测试', async function() {
-    it('转换测试', function() {
+describe('myDocJsx基本功能测试',  function() {
+    it('转换测试', async function() {
         myDocJsx.usePlugin(new Plugin)
         var jsxStr =
 `<doc>
