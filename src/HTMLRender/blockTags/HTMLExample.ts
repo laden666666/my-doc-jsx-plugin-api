@@ -30,7 +30,7 @@ class HtmlExample extends BlockNode<HTMLRender>{
         <summary class="mydoc_api_html-example_summary">view code</summary>
         <p>
 ${
-            render.renderBlockNodes(jsxStr2Nodes(`<code>{\`${srcdoc}\`}</code>`, render, {}))
+            await render.renderBlockNodes(jsxStr2Nodes(`<code>{\`${srcdoc}\`}</code>`, render, {}))
 }</p>
         </details>
     `: ''}
