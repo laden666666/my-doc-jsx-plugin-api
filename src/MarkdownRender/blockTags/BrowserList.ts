@@ -10,11 +10,11 @@ class BrowserList extends BlockNode<MarkdownRender>{
         this.priority = 0;
     }
     
-    async renderTd(versionInfo: string | boolean){
+    renderTd(versionInfo: string | boolean){
         return `<td align="center" style="background-color: #60d848">${( versionInfo == true || versionInfo == 'true') ? '√' : versionInfo }</td>`
     }
     
-    async renderTh(browserName: string){
+    renderTh(browserName: string){
         return `<th align="center">${browserName}</td>`
     }
 
