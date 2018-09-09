@@ -40,9 +40,15 @@ docjsx c html --plugin my-doc-jsx-plugin-api index.jsx ./
 ## 浏览器兼容性
 用于生成一个展示项目浏览器兼容性表格的标签
 
-|Android|Firefox|Chrome|IE|iPhone|Edge|Safari|
-|----|----|----|----|----|----|----|
-|&gt;4.4|true|true|&gt;8|true|true|true|```javascript
+<table cellspacing="1" style="margin: 0 auto;font-size: 14px;background-color: #f9f9f9;color: #036;padding: 3px;border-radius: 4px;border: 1px solid rgba(220, 220, 220, .5);">
+    <colgroup width="100" span="7" align="center"></colgroup>
+    <tr style="height: 30px;">
+        <th align="center">Android</td><th align="center">Firefox</td><th align="center">Chrome</td><th align="center">IE</td><th align="center">iPhone</td><th align="center">Edge</td><th align="center">Safari</td>
+    </tr>
+    <tr style="color: #000;line-height: 28px;font-weight: bold;">
+        <td align="center" style="background-color: #60d848">>4.4</td><td align="center" style="background-color: #60d848">√</td><td align="center" style="background-color: #60d848">√</td><td align="center" style="background-color: #60d848">>8</td><td align="center" style="background-color: #60d848">√</td><td align="center" style="background-color: #60d848">√</td><td align="center" style="background-color: #60d848">√</td>
+    </tr>
+</table>```javascript
 <browser-list Android=">4.4" Firefox Chrome IE=">8" iPhone Edge Safari/>
 ```
 

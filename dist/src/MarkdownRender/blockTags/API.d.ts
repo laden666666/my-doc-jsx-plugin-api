@@ -4,6 +4,6 @@
 import { BlockNode, MarkdownRender } from "my-doc-jsx";
 declare class API extends BlockNode<MarkdownRender> {
     constructor(node: any);
-    render(render: MarkdownRender): string;
+    render(render: MarkdownRender): Promise<string>;
 }
 export default API;

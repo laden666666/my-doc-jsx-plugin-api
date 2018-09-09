@@ -200,55 +200,6 @@ pre[class*="language-"] {
     padding-bottom: 1.2em;
     position: relative;
     z-index: 1;
-}.mydoc_table{
-    margin : 15px 0px 0px ;
-    padding : 0px ;
-    border : 1px solid rgb(170, 170, 170) ;
-    border-collapse : collapse ;
-    width : 100% ;
-    color : rgb(0, 0, 0) ;
-    font-size : 14px ;
-    background-color : rgb(253, 252, 248) ;
-}
-
-.mydoc_table .mydoc_tr{
-    margin : 0px ;
-    padding : 0px ;
-    border : 0px ;
-    background-color : rgb(255, 255, 255) ;
-}
-.mydoc_table .mydoc_tr:nth-child(odd){
-    background-color : rgb(245, 245, 245) ;
-}
-.mydoc_table .mydoc_tr:nth-child(1){
-    background-color : rgb(63, 63, 63);
-}
-
-.mydoc_table .mydoc_th{
-    margin : 0px ;
-    padding : 5px 15px 5px 6px ;
-    border : 1px solid rgb(63, 63, 63) ;
-    vertical-align : baseline ;
-    background-color : rgb(63, 63, 63) ;
-    text-align : left ;
-    color : rgb(255, 255, 255) ;
-    width : 123px ;
-    word-break: break-all;
-    font-weight: normal;
-}
-
-.mydoc_table .mydoc_td{
-    margin : 0px ;
-    padding : 6px 15px 6px 6px ;
-    border : 1px solid rgb(170, 170, 170) ;
-    vertical-align : text-top ;
-    word-break: break-all;
-}
-.mydoc_table .mydoc_td{
-    margin : 0px ;
-    padding : 6px 15px 6px 6px ;
-    border : 1px solid rgb(170, 170, 170) ;
-    vertical-align : text-top ;
 }.mydoc_api{
     line-height: 16px;
     position: relative;
@@ -413,7 +364,15 @@ myDocJsx<span class="token punctuation">.</span><span class="token function">use
                         <h2 class="mydoc_h2_h2">浏览器兼容性</h2>
                     </a>
                     <div class="mydoc_h2_content">
-                        <p class="mydoc_p"> 用于生成一个展示项目浏览器兼容性表格的标签</p><table class="mydoc_table"><tr class="mydoc_tr"><th class="mydoc_th">Android</th><th class="mydoc_th">Firefox</th><th class="mydoc_th">Chrome</th><th class="mydoc_th">IE</th><th class="mydoc_th">iPhone</th><th class="mydoc_th">Edge</th><th class="mydoc_th">Safari</th></tr><tr class="mydoc_tr"><td class="mydoc_td">&gt;4.4</td><td class="mydoc_td">√</td><td class="mydoc_td">√</td><td class="mydoc_td">&gt;8</td><td class="mydoc_td">√</td><td class="mydoc_td">√</td><td class="mydoc_td">√</td></tr></table><figure class='mydoc_code'>
+                        <p class="mydoc_p"> 用于生成一个展示项目浏览器兼容性表格的标签</p><table cellspacing="1" style="margin: 0 auto;font-size: 14px;background-color: #f9f9f9;color: #036;padding: 3px;border-radius: 4px;border: 1px solid rgba(220, 220, 220, .5);">
+    <colgroup width="100" span="7" align="center"></colgroup>
+    <tr style="height: 30px;">
+        <th align="center">Android</td><th align="center">Firefox</td><th align="center">Chrome</td><th align="center">IE</td><th align="center">iPhone</td><th align="center">Edge</td><th align="center">Safari</td>
+    </tr>
+    <tr style="color: #000;line-height: 28px;font-weight: bold;">
+        <td align="center" style="background-color: #60d848">>4.4</td><td align="center" style="background-color: #60d848">√</td><td align="center" style="background-color: #60d848">√</td><td align="center" style="background-color: #60d848">>8</td><td align="center" style="background-color: #60d848">√</td><td align="center" style="background-color: #60d848">√</td><td align="center" style="background-color: #60d848">√</td>
+    </tr>
+</table><figure class='mydoc_code'>
                     <pre class="mydoc_code_pre cm-s-eclipse"><span class="token operator">&lt;</span>browser<span class="token operator">-</span>list Android<span class="token operator">=</span><span class="token string">">4.4"</span> Firefox Chrome IE<span class="token operator">=</span><span class="token string">">8"</span> iPhone Edge Safari<span class="token operator">/</span><span class="token operator">></span></pre>
                 </figure>
                     </div>

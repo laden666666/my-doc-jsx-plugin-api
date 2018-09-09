@@ -1,12 +1,12 @@
 {
   "name": "my-doc-jsx-plugin-api",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "my-doc-jsx的一个插件，用于根据注释、typescript接口生成api表格。",
   "main": "dist/myDocJsxPluginAPI.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "doc": "docjsx c md --plugin my-doc-jsx-plugin-api ./doc-jsx/README.jsx ./ && docjsx c html --plugin my-doc-jsx-plugin-api ./doc-jsx/README.jsx ./",
+    "doc": "docjsx c md --plugin api ./doc-jsx/README.jsx ./ && docjsx c html --plugin api ./doc-jsx/README.jsx ./",
     "test": "cross-env BABEL_ENV=test karma start"
   },
   "repository": {

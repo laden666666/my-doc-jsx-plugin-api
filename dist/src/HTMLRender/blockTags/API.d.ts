@@ -4,6 +4,6 @@
 import { BlockNode, HTMLRender } from "my-doc-jsx";
 declare class API extends BlockNode<HTMLRender> {
     constructor(node: any);
-    render(render: HTMLRender): string;
+    render(render: HTMLRender): Promise<string>;
 }
 export default API;
