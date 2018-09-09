@@ -1,6 +1,6 @@
 {
   "name": "my-doc-jsx-plugin-api",
-  "version": "0.2.1",
+  "version": "0.1.1",
   "description": "my-doc-jsx的一个插件，用于根据注释、typescript接口生成api表格。",
   "main": "dist/myDocJsxPluginAPI.js",
   "scripts": {
