@@ -9,7 +9,8 @@ class Logo extends BlockNode<MarkdownRender>{
     }
 
     async render(render: MarkdownRender){
-        var str = `<p align="center"><img width="100" src="${this.props.src}" alt="${this.props.alt ? '' : this.props.alt}"></p>`;
+        var str = `<p align="center"><img width="100" src="${this.props.src}" alt="${this.props.alt ? '' : this.props.alt}"></p>
+`;
         return str;
     }
 }

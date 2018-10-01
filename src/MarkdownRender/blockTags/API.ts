@@ -7,7 +7,7 @@ import {BlockNode, MarkdownRender} from "my-doc-jsx"
 const paramRegex = /@param\s+({.*})?(\s+\S+)?(\s+.*)?$/
 
 //查找返回值的正则
-const returnRegex = /@return\s+({.*})?(\s+.*)?$/
+const returnRegex = /@returns?\s+({.*})?(\s+.*)?$/
 
 class API extends BlockNode<MarkdownRender>{
     constructor(node){
@@ -52,13 +52,13 @@ ${paramsText.length ? `
 |-|-|-|
 ${paramsText.map(param=>{
     return `|${param.name || ''}|${param.type || ''}|${param.describe || ''}|`
-}).join('')}
+}).join('\n')}
 ` : ''}
 
 ${returnText ? `
 ##### 返回值
 |参数类型|参数说明|
-|-|-|-|
+|-|-|
 |${returnText.type || ''}|${returnText.describe || ''}|
 ` : ''}
 `

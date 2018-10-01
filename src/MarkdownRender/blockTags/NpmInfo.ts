@@ -15,7 +15,8 @@ class NpmInfo extends BlockNode<MarkdownRender>{
             ${this.props.version ? `<a href="https://www.npmjs.com/package/${name}"><img src="https://img.shields.io/npm/v/${name}.svg" alt="Version"></a>` : ''}
             ${this.props.downloads ? `<a href="https://www.npmjs.com/package/${name}"><img src="https://img.shields.io/npm/dm/${name}.svg" alt="Downloads"></a>` : ''}
             ${this.props.license ? `<a href="https://www.npmjs.com/package/${name}"><img src="https://img.shields.io/npm/l/${name}.svg" alt="License"></a>` : ''}
-        </p>`
+        </p>
+`
     }
 }
 

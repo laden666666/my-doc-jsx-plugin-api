@@ -9,7 +9,8 @@ class NpmInfo extends BlockNode<MarkdownRender>{
     }
 
     async render(render: MarkdownRender){
-        var str = `<h2 align="center">${await render.renderInlineNodes(this.childPseudoNodes)}</h2>`;
+        var str = `<h1 align="center">${await render.renderInlineNodes(this.childPseudoNodes)}</h1>
+`;
         return str;
     }
 }
